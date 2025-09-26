@@ -51,3 +51,17 @@ Command to run metro server
 ```
 
 
+![Push Notification 1](screenshots\push_notification_foreground.jpeg)
+
+![Push Notification 2](screenshots\push_notification_message_bg.jpeg)
+
+![Task List screen](screenshots\taskListscreen.jpeg)
+
+![Search by task title](screenshots\tasklist_search.jpeg)
+
+![Task List Screen with sample data](screenshots\tasklist_sampletask.jpeg)
+
+![Add Task Screen](screenshots\addtaskscreen.jpeg)
+
+![Edit/Delete Task Screen](screenshots\edittaskscreen.jpeg)
+
