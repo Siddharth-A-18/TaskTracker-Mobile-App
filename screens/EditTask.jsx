@@ -1,78 +1,71 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { getTaskDetails,deleteTask,updateTask  } from '../components/SqliteFunctions'; // Adjust path
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTask, deleteTask } from '../Redux/taskSlice';
 
 const EditTask = () => {
   const navigation = useNavigation();
   const route = useRoute();
+  const dispatch = useDispatch();
   const { id } = route.params || {};
+
+  const tasks = useSelector((state) => state.tasks.tasks);
+  const currentTask = tasks.find(t => t.id === id);
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
   const getCurrentFormattedDateTime = () => {
-  const dt = new Date();
-  const pad = (n) => (n < 10 ? '0' + n : n);
-
-  const day = pad(dt.getDate());
-  const month = pad(dt.getMonth() + 1);
-  const year = dt.getFullYear();
-
-  const hours = pad(dt.getHours());
-  const minutes = pad(dt.getMinutes());
-  const seconds = pad(dt.getSeconds());
-
-  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-};
-
+    const dt = new Date();
+    const pad = (n) => (n < 10 ? '0' + n : n);
+    const day = pad(dt.getDate());
+    const month = pad(dt.getMonth() + 1);
+    const year = dt.getFullYear();
+    const hours = pad(dt.getHours());
+    const minutes = pad(dt.getMinutes());
+    const seconds = pad(dt.getSeconds());
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  };
 
   useEffect(() => {
-    if (id) {
-      const fetchTask = async () => {
-        const results = await getTaskDetails(id);
-        if (results && results.length > 0) {
-          const task = results[0];
-          setTitle(task.title ?? 'Not available');
-          setDescription(task.description ?? 'Not available');
-          setIsEditing(false);
-        } else {
-          setTitle('Not available');
-          setDescription('Not available');
-        }
-      };
-      fetchTask();
+    if (currentTask) {
+      setTitle(currentTask.title ?? 'Not available');
+      setDescription(currentTask.description ?? 'Not available');
+      setIsEditing(false);
     }
-  }, [id]);
+  }, [currentTask]);
 
   const handleEdit = () => {
-    setIsEditing(true); 
+    setIsEditing(true);
   };
 
   const handleUpdate = async () => {
+    if (!title.trim()) {
+      Alert.alert('Validation', 'Title is required.');
+      return;
+    }
     const updatedAt = getCurrentFormattedDateTime();
     try {
-      await updateTask(id, { title, description, updatedAt });
-      setIsEditing(false); // Disable editing after update
-      console.log("Update successful");
+      await dispatch(updateTask({ id, title, description, updatedAt })).unwrap();
+      setIsEditing(false);
       navigation.navigate('TaskList');
     } catch (error) {
+      Alert.alert('Error', 'Failed to update task.');
       console.error('Update error:', error);
     }
   };
 
   const handleDelete = async () => {
-  try {
-    await deleteTask(id);
-    console.log(`Task with id ${id} deleted successfully`);
-    navigation.navigate('TaskList');
-  } catch (error) {
-    Alert.alert('Error', 'Failed to delete task.');
-    console.error('Delete error:', error);
-  }
-};
-
+    try {
+      await dispatch(deleteTask(id)).unwrap();
+      navigation.navigate('TaskList');
+    } catch (error) {
+      Alert.alert('Error', 'Failed to delete task.');
+      console.error('Delete error:', error);
+    }
+  };
 
   return (
     <View className="flex-col mx-4">
@@ -87,7 +80,7 @@ const EditTask = () => {
             className={`${isEditing ? 'bg-white' : 'bg-gray-200'} border rounded-[10px] w-[303px] h-[44px] px-[15px] py-[13px] text-black border-black`}
             value={title}
             onChangeText={setTitle}
-             editable={isEditing}
+            editable={isEditing}
           />
         </View>
 
@@ -99,7 +92,7 @@ const EditTask = () => {
             className={`${isEditing ? 'bg-white' : 'bg-gray-200'} border rounded-[10px] w-[303px] h-[150px] px-[15px] py-[13px] text-black border-black`}
             value={description}
             onChangeText={setDescription}
-             editable={isEditing}
+            editable={isEditing}
           />
         </View>
       </View>

@@ -9,6 +9,8 @@ import AddTask from './screens/AddTask';
 import EditTask from './screens/EditTask';
 import TaskList from './screens/TaskList';
 import { initDB } from './components/SqliteFunctions'; // Adjust import path accordingly
+import { Provider} from 'react-redux';
+import store from './Redux/store';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +39,7 @@ const App = () => {
   }
 
   return (
+    <Provider store={store}>
     <NavigationContainer ref={navContainer}>
       <Stack.Navigator
         initialRouteName="TaskList"
@@ -50,6 +53,7 @@ const App = () => {
         <Stack.Screen name="AddTask" component={AddTask} />
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 };
 
