@@ -51,17 +51,17 @@ Command to run metro server
 ```
 
 
-![Push Notification 1](screenshots\push_notification_foreground.jpeg)
+![Push Notification 1] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_foreground.jpeg)
 
-![Push Notification 2](screenshots\push_notification_message_bg.jpeg)
+![Push Notification 2] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_message_bg.jpeg)
 
-![Task List screen](screenshots\taskListscreen.jpeg)
+![Task List screen] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/taskListscreen.jpeg)
 
-![Search by task title](screenshots\tasklist_search.jpeg)
+![Search by task title] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_search.jpeg)
 
-![Task List Screen with sample data](screenshots\tasklist_sampletask.jpeg)
+![Task List Screen with sample data] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_sampletask.jpeg) 
 
-![Add Task Screen](screenshots\addtaskscreen.jpeg)
+![Add Task Screen] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/addtaskscreen.jpeg)
 
-![Edit/Delete Task Screen](screenshots\edittaskscreen.jpeg)
+![Edit/Delete Task Screen] (https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/edittaskscreen.jpeg)
 
