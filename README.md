@@ -51,30 +51,24 @@ Command to run metro server
 ```
 ## Screenshots
 
-Push Notification 1
-![Push Notification 1](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_foreground.jpeg)
+### Push Notification 1
+![Push Notification 1](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_foreground.jpg)
 
+### Push Notification 2
+![Push Notification 2](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_message_bg.jpg)
 
-Push Notification 2
-![Push Notification 2](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/push_notification_message_bg.jpeg)
+### Task List Screen
+![Task List screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/taskListscreen.jpg)
 
+### Search by task title
+![Search by task title](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_search.jpg)
 
-Task List Screen
-![Task List screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/taskListscreen.jpeg)
+### Task List with data
+![Task List Screen with sample data](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_sampletask.jpg) 
 
+### Add Task Screen 
+![Add Task Screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/addtaskscreen.jpg)
 
-Search by task title
-![Search by task title](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_search.jpeg)
-
-
-Task List with data
-![Task List Screen with sample data](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/tasklist_sampletask.jpeg) 
-
-
-Add Task Screen
-![Add Task Screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/addtaskscreen.jpeg)
-
-
-Edit/Delete Task Screen
-![Edit/Delete Task Screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/edittaskscreen.jpeg)
+### Edit/Delete Task Screen
+![Edit/Delete Task Screen](https://github.com/Siddharth-A-18/TaskTracker-Mobile-App/blob/main/screenshots/edittaskscreen.jpg)
 
